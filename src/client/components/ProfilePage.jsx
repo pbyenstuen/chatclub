@@ -6,7 +6,7 @@ const ProfilePage = ({ api }) => {
     const { data: user, loading, error, reload } = useLoader(async () => await api.auth.getUser());
 
     if (loading) {
-        return <h2>Loading...</h2>
+        return <h2>Loading profile...</h2>
     }
 
     if (error) {
@@ -19,7 +19,7 @@ const ProfilePage = ({ api }) => {
                 <h2>Profile</h2>
             </header>
             <div id="profile-card">
-                {Object.entries(user).length > 2 ?
+                {Object.entries(user).length > 3 ?
                     <>
                         <img src={user.image} alt={user.displayName} />
                         <div>

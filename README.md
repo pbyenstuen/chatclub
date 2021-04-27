@@ -1,10 +1,12 @@
 ## PG6301 Web Development and API Design - EXAM
----
 
-Chatclub is an application where you can create fake users (called Chatters), and use these to communicate between each other. 
+Chatclub is an application where you can create fake users (called Chatters), and use these to communicate between each other through Websockets.
 
-Note:
-I do have functionality for creating real local users, and I could have used those for the chatting part, but I chose to follow the exam description the way I interpreted it, e.g. having one authenticated user being able to register more users in the system.
+...at least that was the plan.
+
+I was not able to finish this application the way I intended, as I found the exam topic to be especially challenging and somewhat ambiguous in the way is was described. Throughout the development I found myself switching routes many times and never felt sure about where I was heading, because I was not sure what I was asked to do.  This combined with the limited time has led the project to become a collection of demonstrations rather than a full-fledged application.
+
+What it turned out to be is an application where users, upon authenticating themselves, are able to create, edit and delete Chatters, but those cannot be used for messaging. Instead, you (the authenticated user) can communicate with other clients in a chat room that broadcasts messages to all connected clients.
 
 ### How to run
 
@@ -35,6 +37,7 @@ Google strategy
 
 Shared
 * `GET    /api/auth/user`
+* `GET    /api/auth/users`
 
 #### Chatters
 * `POST    /api/chatters/create`
@@ -42,13 +45,32 @@ Shared
 * `GET     /api/chatters/:id`
 * `PUT     /api/chatters/:id`
 * `DELETE  /api/chatters/:id`
+
 (Chatters endpoints return 401 if not authenticated)
+
+#### Messages
+* `POST    /api/messages`
+* `GET     /api/messages`
+
+(Not used by frontend)
 
 ### Test Coverage
 
 | File         | % Stmts         
 | -------------|-------------
-| All files    | %
+| All files    | 74.87
+
+In the above result, the following files are ignored by Jest, as I don't think they are suited for testing:
+* /src/client/lib/http.js
+* /src/client/ApplicationApi.jsx
+* /src/client/index.jsx
+
+#### Coverage with those 3 files excluded
+![coverage](images/coverage.png)
+
+#### Total coverage for all files
+![coverage-total](images/coverage-total.png)
+
 
 ### Additional functionalities/features
 

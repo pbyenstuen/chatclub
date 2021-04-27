@@ -17,7 +17,7 @@ const api = {
         },
 
         logOut: async () => {
-            return await fetchJSON("/auth/logout", {
+            return await postJSON("/auth/logout", {
                 method: "POST",
             });
         },
@@ -26,14 +26,20 @@ const api = {
             const response = await getResponse("/auth/user");
             return (response.status === 401 ? undefined : await response.json());
         },
+        getUsers: async () => {
+            return await fetchJSON("/auth/users");
+        },
     },
 
-    chat: {
+    messages: {
         storeMessage: async (message) => {
-            return await postJSON("/chat/message", {
+            return await postJSON("/messages", {
                 method: "POST",
                 payload: message
             });
+        },
+        getMessages: async () => {
+            return await fetchJSON("/messages");
         }
     },
 

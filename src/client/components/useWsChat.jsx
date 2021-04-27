@@ -1,3 +1,5 @@
+// Custom hook from Johannes' lectures
+
 import React, { useEffect, useRef, useState } from "react";
 
 const useWsChat = () => {

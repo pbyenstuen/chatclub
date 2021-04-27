@@ -7,7 +7,6 @@ import EditChatterForm from "./EditChatterForm";
 const EditChatterPage = ({ api }) => {
     const { id } = useParams();
     const { data: chatter, loading, error, reload } = useLoader(async () => await api.chatters.getChatter(id), [id]);
-    console.log(chatter);
 
     if (loading) {
         return <h2>Loading...</h2>

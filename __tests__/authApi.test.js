@@ -23,7 +23,7 @@ describe("auth API", () => {
         await request(app)
             .post("/api/auth/signup")
             .send(credentials)
-            .expect(201);
+            .expect(201)
 
         await request(app)
             .post("/api/auth/signup")
@@ -37,12 +37,12 @@ describe("auth API", () => {
         await user
             .post("/api/auth/signup")
             .send(credentials)
-            .expect(201);
+            .expect(201)
 
         await user
             .post("/api/auth/login")
             .send(credentials)
-            .expect(200)
+            .expect(200);
     });
 
     it("can log out user", async () => {
@@ -58,7 +58,7 @@ describe("auth API", () => {
 
         await request(app)
             .post("/api/auth/logout")
-            .expect(204)
+            .expect(204);
     });
 
     it("returns 401 on fetching non-existent user", async () => {

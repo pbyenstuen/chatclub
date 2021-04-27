@@ -8,7 +8,6 @@ const ChattersList = ({ api, chatters, loading, error, updateList }) => {
 
     const { handleSubmit: handleDeleteChatter, submitting } = useSubmit(
         async () => {
-            console.log(idToDelete)
             await api.chatters.deleteChatter({ idToDelete });
         },
         async () => {
@@ -22,15 +21,12 @@ const ChattersList = ({ api, chatters, loading, error, updateList }) => {
         updateList();
     }
 
-    if (loading) {
-        return <h2>Loading...</h2>
-    }
-
     if (error) {
-        return <ErrorView error={error} reload={reload} />;
+        return <ErrorView error={error} reload={updateList} />;
     }
 
     return (
+        !loading &&
         <div id="chatters-container">
             {chatters.map(({ id, firstName, lastName, email }) => (
                 <div id="chatter-item" key={id}>

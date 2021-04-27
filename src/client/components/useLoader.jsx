@@ -1,3 +1,5 @@
+// Custom hook from Johannes' lectures
+
 import { useEffect, useState } from "react";
 
 const useLoader = (loadingFunction, deps = []) => {

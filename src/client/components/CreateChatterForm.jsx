@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useSubmit from "./useSubmit";
 import InputField from "./InputField";
 
-const CreateChatter = ({ api, updateList }) => {
+const CreateChatterForm = ({ api, updateList }) => {
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -22,7 +22,13 @@ const CreateChatter = ({ api, updateList }) => {
 
     const validateInput = (e) => {
         e.preventDefault();
-        if (!email || !firstName || !lastName) { setInputError("Please enter all fields"); return; }
+        if (!email || !firstName || !lastName) {
+            setInputError("Please enter all fields");
+            setTimeout(() => {
+                setInputError("");
+            }, 2000);
+            return;
+        }
         handleCreateChatter(e);
     };
 
@@ -52,4 +58,4 @@ const CreateChatter = ({ api, updateList }) => {
     );
 };
 
-export default CreateChatter;
+export default CreateChatterForm;

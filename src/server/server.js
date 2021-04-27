@@ -10,7 +10,7 @@ const cookieParser = require("cookie-parser");
 
 const users = require("./db/users");
 const authApi = require("./routes/auth-api");
-const chatApi = require("./routes/chat-api");
+const messagesApi = require("./routes/messages-api");
 const chattersApi = require("./routes/chatters-api");
 
 const app = express();
@@ -29,7 +29,6 @@ app.use(
   })
 );
 
-// Passport config
 const initializePassport = require("./config/passport-config");
 initializePassport(passport, users);
 
@@ -45,9 +44,12 @@ const sockets = [];
 
 const wsServer = new ws.Server({ noServer: true });
 wsServer.on("connection", (socket) => {
+
   sockets.push(socket);
+
   socket.on("message", (msg) => {
     const { username, picture, message } = JSON.parse(msg);
+    console.log(msg);
     const id = msgIndex++;
     for (const recipient of sockets) {
       recipient.send(JSON.stringify({ id, username, picture, message }));
@@ -57,7 +59,7 @@ wsServer.on("connection", (socket) => {
 
 // Routes
 app.use("/api/auth", authApi);
-app.use("/api/chat", chatApi);
+app.use("/api/messages", messagesApi);
 app.use("/api/chatters", chattersApi);
 
 app.use((req, res, next) => {

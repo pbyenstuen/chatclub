@@ -1,5 +1,5 @@
 {
-  "name": "pg6302-exam",
+  "name": "chatclub",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "concurrently npm:server npm:parcel",
     "server": "nodemon --watch src/server src/server/server.js",
-    "parcel": "parcel src/client/index.html",
+    "parcel": "parcel watch src/client/index.html",
     "test": "jest --coverage",
     "format": "prettier --write src"
   },
@@ -25,7 +25,6 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
@@ -46,7 +45,13 @@
   "jest": {
     "transform": {
       "\\.jsx": "babel-jest"
-    }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/src/client/lib/http.js",
+      "!<rootDir>/src/client/ApplicationApi.jsx",
+      "!<rootDir>/src/client/index.jsx"
+    ]
   },
   "babel": {
     "presets": [

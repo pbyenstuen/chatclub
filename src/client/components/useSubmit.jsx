@@ -1,3 +1,5 @@
+// Custom hook from Johannes' lectures
+
 import { useState } from "react";
 
 const useSubmit = (submitFunction, onSubmitSuccess) => {

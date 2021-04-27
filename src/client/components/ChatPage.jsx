@@ -16,12 +16,14 @@ const ChatPage = ({ api }) => {
         return <ErrorView error={error} reload={reload} />;
     }
 
-    return <ChatView
-        user={user}
-        chatLog={chatLog}
-        sendMessage={sendMessage}
-        api={api}
-    />
+    return (
+            <ChatView
+                user={user}
+                chatLog={chatLog}
+                sendMessage={sendMessage}
+                api={api}
+            />
+    )
 }
 
 export default ChatPage;

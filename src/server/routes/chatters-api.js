@@ -1,15 +1,20 @@
 const express = require("express");
-const cors = require("cors")
 
 const chattersApi = express.Router();
 
 let chatters = [
-    // {
-    //     id: 1,
-    //     email: "chatterman@gmail.com",
-    //     firstName: "Chad",
-    //     lastName: "Chatsworth"
-    // }
+    {
+        id: 1,
+        email: "chatterman@gmail.com",
+        firstName: "Chad",
+        lastName: "Chatsworth"
+    },
+    {
+        id: 2,
+        email: "brad@broadpark.no",
+        firstName: "Brad",
+        lastName: "Broadcast"
+    }
 ];
 
 const saveChatter = (newChatter) => {
@@ -26,10 +31,7 @@ chattersApi.post("/create", (req, res) => {
     }
 
     saveChatter(req.body);
-
     req.session.chatters = chatters;
-
-    console.log(req.session.chatters);
     res.status(201).end();
 });
 
@@ -72,10 +74,9 @@ chattersApi.delete("/:id", (req, res) => {
     }
 
     const { id } = req.body;
-    console.log(id);
     const index = chatters.findIndex((chatter) => chatter.id === id);
     chatters.splice(index, 1);
     res.status(200).end();
-  });
+});
 
 module.exports = chattersApi;

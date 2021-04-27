@@ -61,7 +61,9 @@ describe("ChatView", () => {
             target: { value: "..." },
         });
 
-        Simulate.submit(container.querySelector("form"));
+        await act(async () => {
+            Simulate.submit(container.querySelector("form"));
+        });
 
         expect(sendMessage).toBeCalledWith({
             message: "...", 

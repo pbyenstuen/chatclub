@@ -1,7 +1,7 @@
 import React from 'react';
 import useLoader from "./useLoader";
 import ChattersList from './ChattersList';
-import CreateChatter from './CreateChatter';
+import CreateChatterForm from './CreateChatterForm';
 
 const ChattersPage = ({ api }) => {
     const { data: chatters, loading, error, reload: updateList } = useLoader(async () => await api.chatters.getChatters());
@@ -12,7 +12,7 @@ const ChattersPage = ({ api }) => {
                 <h2>Chatters</h2>
             </header>
             <div id="chatters-page">
-                <CreateChatter
+                <CreateChatterForm
                     api={api}
                     updateList={updateList}
                 />

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import useSubmit from "./useSubmit";
 import InputField from "./InputField";
 
-export const ChatView = ({ user, chatLog, sendMessage, api }) => {
+export const ChatView = ({ user, sender, recipient, chatLog, sendMessage, api }) => {
     const [message, setMessage] = useState("");
 
-    const { handleSubmit: saveMessage, submitting, error } = useSubmit(
+    const { handleSubmit: handleStoreMessage, submitting } = useSubmit(
         async () => {
-            await api.chat.storeMessage({ message });
+            await api.messages.storeMessage({ message });
         }, () => {
             return;
         }
@@ -17,8 +17,8 @@ export const ChatView = ({ user, chatLog, sendMessage, api }) => {
         e.preventDefault();
         const username = user.displayName;
         const picture = user.image ? user.image : null;
-        sendMessage({ username, picture, message });
-        saveMessage(e);
+        sendMessage({ recipient, username, picture, message });
+        handleStoreMessage(e);
         setMessage("");
     };
 

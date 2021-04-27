@@ -4,6 +4,10 @@ const { v4: uuidv4 } = require("uuid");
 // Pretending that this is a real database
 let users = [];
 
+const getUsers = () => {
+  return users;
+}
+
 const getUserByUsername = (username) => {
   return users.find((user) => user.username === username);
 };
@@ -41,6 +45,7 @@ const clearUsers = () => {
 
 module.exports = {
   users,
+  getUsers,
   getUserByUsername,
   getUserById,
   createUser,

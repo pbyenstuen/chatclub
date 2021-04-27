@@ -71,7 +71,7 @@ describe("ChattersPage", () => {
         });
 
         await act(async () => {
-            Simulate.submit(container.querySelector("form"));
+            await Simulate.submit(container.querySelector("form"));
         });
 
         expect(createChatter).toBeCalledWith({
@@ -95,7 +95,9 @@ describe("ChattersPage", () => {
 
         await mountComponent(<ChattersPage api={api} />);
 
-        Simulate.submit(container.querySelector("form"));
+        await act(async () => {
+            await Simulate.submit(container.querySelector("form"));
+        });
 
         expect(container.innerHTML).toMatchSnapshot();
         expect(container.querySelector("h5").textContent).toEqual("Please enter all fields");
@@ -124,49 +126,11 @@ describe("ChattersPage", () => {
         }));
 
         await act(async () => {
-            Simulate.submit(container.querySelector("form"));
+            await Simulate.submit(container.querySelector("form"));
         });
 
         expect(container.innerHTML).toMatchSnapshot();
         expect(container.querySelector("h5").textContent).toEqual("Error: Error");
-    });
-
-    it("can show error message on rendering chatters list", async () => {
-        const api = {
-            chatters: {
-                getChatters: () => {
-                    throw new Error("Error");
-                }
-            }
-        }
-
-        await mountComponent(<ChattersPage api={api} />);
-
-        expect(container.innerHTML).toMatchSnapshot();
-        expect(container.querySelector("h2").textContent).toEqual("Something went wrong: Error: Error");
-    });
-
-    it("can show edit chatter page", async () => {
-        const api = {
-            chatters: {
-                getChatters: () => [{
-                    id: 1,
-                    email: "test@test.test",
-                    firstName: "Test",
-                    lastName: "Tester"
-                }]
-            }
-        }
-
-        await mountComponent(<ChattersPage api={api} />);
-
-        await act(async () => {
-            await Simulate.click(container.querySelector("#chatter-item a"));
-        });
-
-        expect(container.innerHTML).toMatchSnapshot();
-        expect(container.querySelector("h2").textContent).toEqual("Edit Chatter");
-        expect(container.querySelector("h3").textContent).toEqual("test@test.test");
     });
 
     it("can call deletion function", async () => {

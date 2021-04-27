@@ -19,13 +19,13 @@ const checkResponse = (res, url) => {
 }
 
 export const fetchJSON = async (url, options = null) => {
-  const response = await fetch(`http://localhost:3000/api${url}`, options);
+  const response = await fetch(`/api${url}`, options);
   checkResponse(response, url);
   return await response.json();
 }
 
 export const postJSON = async (url, { method, payload }) => {
-  const response = await fetch(`http://localhost:3000/api${url}`, {
+  const response = await fetch(`/api${url}`, {
     method,
     body: JSON.stringify(payload),
     headers: {
@@ -37,7 +37,7 @@ export const postJSON = async (url, { method, payload }) => {
 }
 
 export const getResponse = async (url, options = null) => {
-  const response = await fetch(`http://localhost:3000/api${url}`, options);
+  const response = await fetch(`/api${url}`, options);
   checkResponse(response, url);
   return await response;
 };
