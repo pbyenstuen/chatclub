@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatView can render existing messages from chat log 1`] = `
+<div>
+  <div
+    id="chat-container"
+  >
+    <header>
+      <h2>
+        Chat
+      </h2>
+    </header>
+    <main
+      id="chat-main"
+    >
+      <div
+        class="message recipient"
+      >
+        <div
+          class="message-user-info"
+        >
+          <h5>
+            Tom
+          </h5>
+        </div>
+        <p>
+          Cool chat
+        </p>
+      </div>
+      <div
+        class="message recipient"
+      >
+        <div
+          class="message-user-info"
+        >
+          <h5>
+            Jerry
+          </h5>
+        </div>
+        <p>
+          ^
+        </p>
+      </div>
+    </main>
+    <footer
+      id="chat-footer"
+    >
+      <form
+        id="chat-form"
+      >
+        <div>
+          <label>
+            
+             
+            <input
+              class="chat-input"
+              name=""
+              placeholder="Write here..."
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <button>
+          Send
+        </button>
+      </form>
+    </footer>
+  </div>
+</div>
+`;

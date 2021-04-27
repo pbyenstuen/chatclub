@@ -1,0 +1,308 @@
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+}
+
+#root {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid;
+}
+
+header h2 {
+    margin: 0;
+    padding: 1em;
+}
+
+#auth-header {
+    background-color: transparent;
+    border: 0px;
+}
+
+#header-bar {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: start;
+    border-bottom: 1px solid rgb(57, 59, 61);
+    color: rgb(57, 59, 61);
+}
+
+#header-bar-user-info {
+    display: flex;
+    grid-column: 5 / 6;
+    justify-self: end;
+}
+
+#header-bar h1 {
+    margin-left: 1em;
+}
+
+#header-bar h3 {
+    margin-right: 0.5em;
+}
+
+#header-bar button {
+    margin: 0.5em;
+    margin-right: 1em;
+}
+
+#header-bar nav {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    grid-column: 3 / 4;
+}
+
+#header-bar nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#header-bar nav ul li {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+}
+
+#header-bar nav ul a {
+    display: block;
+    width: 4.7em;
+}
+
+.submit-btn {
+    margin: auto;
+    margin-top: 1.5em;
+}
+
+button {
+    font-family: "Nunito", sans-serif;
+    background-color: transparent;
+    padding: 0.65em;
+    font-size: 1em;
+    border: 1px solid darkslategrey;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#google-btn {
+    background-color: #4285F4;
+    color: #ffffff;
+    border: 0px;
+    padding: 0.8em 1.5em 0.8em 1.5em;
+}
+
+#signup-options-container {
+    margin-top: 3em;
+    border-top: 1px solid gray;
+    padding: 1em 2em 2em 2em;
+    background-color: rgb(245, 245, 245);
+}
+
+#login-container, #signup-container {
+    margin-top: 4em;
+}
+
+#signup-options-container h3 {
+    margin-bottom: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 15em;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+#chat-container {
+    height: 92vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+#chat-main {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1em;
+}
+
+#chat-footer {
+    padding: 1em;
+    background-color: rgb(245, 245, 245);
+    border-top: 1px solid;
+}
+
+#chat-form {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#chat-form div {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
+#chat-form div label {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
+#chat-form > input {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
+#chat-form button {
+    margin-left: 0.5em;
+}
+
+.chat-input {
+    flex: 1;
+    height: 100%;
+    border-radius: 50px;
+    padding: 0em 1em 0em 1em;
+    font-size: 15px;
+    border: 1px solid black;
+}
+
+.message {
+    min-height: 5em;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 10px;
+    word-wrap: break-word;
+    max-width: 45%;
+}
+
+.message p {
+    padding: 0.1em 1em 0.1em 1em;
+    text-align: start;
+}
+
+.personal {
+    margin-left: auto;
+    background-color: #bee6c0;
+}
+
+.recipient {
+    margin-right: auto;
+    background-color: rgb(216, 210, 210);
+}
+
+.message-user-info {
+    display: flex;
+    padding: 0em 0em 0em 0.5em;
+    text-align: start;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+}
+
+.message-user-info img {
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.message-user-info h5 {
+    margin: 1em;
+}
+
+#profile-card {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin-top: 2em;
+    text-align: start;
+}
+
+#profile-card p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#profile-card h4 {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+#profile-card img {
+    border-radius: 50px;
+    align-self: start;
+    margin-right: 2em;
+}
+
+#chatters-page {
+    margin: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#chatters-page a {
+    color: white;
+    text-decoration: none;
+}
+
+#del-btn {
+    font-size: 13px;
+    margin-top: 1em;
+    background-color: rgb(228, 118, 118);
+    color: white;
+    border: 0px;
+    margin-left: 1em;
+}
+
+#edit-btn {
+    font-size: 13px;
+    margin-top: 1em;
+    background-color: rgb(151, 146, 146);
+    color: white;
+    border: 0px;
+}
+
+#create-chatter-form {
+    background-color: #bee6c0;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+#chatter-item {
+    height: max-content;
+    border-radius: 20px;
+    padding: 1em;
+    margin: 1em 0em 1em 1em;
+    background-color: rgb(216, 210, 210);
+}
+
+#chatter-item h5{
+    margin: 0em 0em 1em 0em;
+}
+
+#edit-chatter-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 1em;
+}

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBar renders authenticated view 1`] = `"<div id=\\"header-bar\\"><h1>Chatclub</h1><nav><ul><li><a href=\\"/chatters\\">CHATTERS</a></li><li><a href=\\"/\\">CHAT</a></li><li><a href=\\"/profile\\">PROFILE</a></li></ul></nav><div id=\\"header-bar-user-info\\"><h3>User</h3><button>SIGN OUT</button></div></div>"`;
+
+exports[`HeaderBar renders unauthenticated view 1`] = `"<div id=\\"header-bar\\"><h1>Chatclub</h1><nav><ul><li><a href=\\"/signup\\">SIGN UP</a></li><li><a href=\\"/login\\">SIGN IN</a></li></ul></nav></div>"`;

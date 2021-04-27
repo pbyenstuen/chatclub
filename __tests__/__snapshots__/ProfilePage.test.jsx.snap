@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfilePage can show error message 1`] = `"<div>Something went wrong: Error: Error</div><button>TRY AGAIN</button>"`;
+
+exports[`ProfilePage can show user info (google) 1`] = `"<div id=\\"profile-container\\"><header><h2>Profile</h2></header><div id=\\"profile-card\\"><img src=\\"test.png\\" alt=\\"Test\\"><div><h4>USERNAME/EMAIL</h4><p>Test</p><h4>DISPLAY NAME</h4><p>Test</p><h4>FIRST NAME</h4><p>Test</p><h4>LAST NAME</h4><p>Test</p></div></div></div>"`;

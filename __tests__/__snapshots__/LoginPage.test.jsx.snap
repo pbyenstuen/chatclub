@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage can show error message 1`] = `"<div id=\\"login-container\\"><header id=\\"auth-header\\"><h2>SIGN IN</h2></header><form><h4>Error: Invalid username/password</h4><div><label>Username <input type=\\"text\\" name=\\"username\\" value=\\"\\"></label></div><div><label>Password <input type=\\"password\\" name=\\"password\\" value=\\"\\"></label></div><button class=\\"submit-btn\\">SIGN IN</button></form><div id=\\"signup-options-container\\"><h3>Don't have an account?</h3><a href=\\"/signup\\">SIGN UP</a><h4>OR</h4><a href=\\"/api/auth/google\\"><button id=\\"google-btn\\">SIGN IN WITH GOOGLE</button></a></div></div>"`;

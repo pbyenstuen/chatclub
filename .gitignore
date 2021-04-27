@@ -1,0 +1,12 @@
+/.idea/
+*.iml
+node_modules/
+.cache/
+.parcel-cache/
+dist/
+/coverage.data
+/coverage/
+.env
+/server/.env
+/*.crt
+/*.key
