@@ -79,4 +79,4 @@ In the above result, the following files are ignored by Jest, as I don't think t
 
 * In addition to Google strategy, I added a local strategy to passport. Usernames and password hashes (bcrypt) are "stored" in a dummy database.
 * Helmet to add security HTTP headers
-* Added a custom "ProtectedRoute" component for handling redirection to /login when trying to access certain routes unauthenticated
+* Added a custom "ProtectedRoute" component for handling redirection to /login when trying to access certain routes while unauthenticated
