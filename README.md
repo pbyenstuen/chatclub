@@ -1,12 +1,16 @@
-## PG6301 Web Development and API Design - EXAM
+***
+This was my delivery for the exam in [*PG6301 Web Development and API Design*](https://www.kristiania.no/studieportal/school-of-economics-innovation-and-technology/bachelorniva/pg6301/webutvikling-og-api-design?year=2021&period=0) at Kristiania University College, spring 2021. 
 
-Chatclub is an application where you can create fake users (called Chatters), and use these to communicate between each other through Websockets.
+*"Probably the best delivery of this semester"*
+<br/>
+\- Examinator
 
-...at least that was the plan.
+***
 
-I was not able to finish this application the way I intended, as I found the exam topic to be especially challenging and somewhat ambiguous in the way is was described. Throughout the development I found myself switching routes many times and never felt sure about where I was heading, because I was not sure what I was asked to do.  This combined with the limited time has led the project to become a collection of demonstrations rather than a full-fledged application.
+## Chatclub
 
-What it turned out to be is an application where users, upon authenticating themselves, are able to create, edit and delete Chatters, but those cannot be used for messaging. Instead, you (the authenticated user) can communicate with other clients in a chat room that broadcasts messages to all connected clients.
+An application where users, upon authenticating themselves, are able to create, edit and delete Chatters. A chat room is implemented where the user can communicate with other connected clients. The application was never fully finished.
+
 
 ### How to run
 
@@ -16,7 +20,7 @@ On the CLI:
 
 The application will then be accessible at `http://localhost:3000/`, assuming port 3000 is available.
 
-To enable authentication with Google functionality, it is required to provide a .env file containing environment variables for Google Client ID and Google Client Secret.
+To enable authentication with Google, you need to to provide a .env file containing environment variables for Google Client ID and Google Client Secret.
 
 ```
 GOOGLE_CLIENT_ID = 
