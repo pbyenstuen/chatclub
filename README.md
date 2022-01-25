@@ -1,5 +1,5 @@
 ***
-This was my delivery for the 72 hour exam in [*PG6301 Web Development and API Design*](https://www.kristiania.no/studieportal/school-of-economics-innovation-and-technology/bachelorniva/pg6301/webutvikling-og-api-design?year=2021&period=0) at Kristiania University College, spring 2021. 
+This was my delivery for the 48 hour exam in [*PG6301 Web Development and API Design*](https://www.kristiania.no/studieportal/school-of-economics-innovation-and-technology/bachelorniva/pg6301/webutvikling-og-api-design?year=2021&period=0) at Kristiania University College, spring 2021. 
 
 *"Probably the best delivery of this semester"*
 <br/>
